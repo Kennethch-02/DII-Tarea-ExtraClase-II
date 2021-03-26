@@ -1,59 +1,58 @@
 #include <iostream>
-typedef int Coordinate;
+typedef int coordenada;
 typedef int Dimension;
 using namespace std;
-// Desired interface
-class Rectangle
+//Interfaz deseada
+class rectangulo
 {
 public:
-    virtual void draw() = 0;
+    virtual void dibujar() = 0;
 };
 
-// Legacy component
-class LegacyRectangle
+// Componente heredado
+class rectanguloHeredado
 {
 public:
-    LegacyRectangle(Coordinate x1, Coordinate y1, Coordinate x2, Coordinate y2)
+    rectanguloHeredado(coordenada x1, coordenada y1, coordenada x2, coordenada y2)
     {
         x1_ = x1;
         y1_ = y1;
         x2_ = x2;
         y2_ = y2;
-        cout << "LegacyRectangle:  create.  (" << x1_ << "," << y1_ << ") => ("
+        cout << "rectanguloHeredado:  crear.  (" << x1_ << "," << y1_ << ") => ("
              << x2_ << "," << y2_ << ")" << endl;
     }
-    void oldDraw()
+    void Ant_dibujo()
     {
-        cout << "LegacyRectangle:  oldDraw.  (" << x1_ << "," << y1_ <<
+        cout << "rectanguloHeredado:  Ant_dibujo.  (" << x1_ << "," << y1_ <<
              ") => (" << x2_ << "," << y2_ << ")" << endl;
     }
 private:
-    Coordinate x1_;
-    Coordinate y1_;
-    Coordinate x2_;
-    Coordinate y2_;
+    coordenada x1_;
+    coordenada y1_;
+    coordenada x2_;
+    coordenada y2_;
 };
 
-// Adapter wrapper
-class RectangleAdapter: public Rectangle, private LegacyRectangle
+// Adaptador envolvente
+class AdaptadorRectangulo: public rectangulo, private rectanguloHeredado
 {
 public:
-    RectangleAdapter(Coordinate x, Coordinate y, Dimension w, Dimension h):
-            LegacyRectangle(x, y, x + w, y + h)
+    AdaptadorRectangulo(coordenada x, coordenada y, Dimension w, Dimension h):
+            rectanguloHeredado(x, y, x + w, y + h)
     {
-        cout << "RectangleAdapter: create.  (" << x << "," << y <<
-             "), width = " << w << ", height = " << h << endl;
+        cout << "AdaptadorRectangulo: crear.  (" << x << "," << y <<
+             "), Ancho = " << w << ", Alto = " << h << endl;
     }
-    virtual void draw()
+    virtual void dibujar()
     {
-        cout << "RectangleAdapter: draw." << endl;
-        oldDraw();
+        cout << "AdaptadorRectangulo: dibujar." << endl;
+        Ant_dibujo();
     }
 };
 
 int main()
 {
-    Rectangle *r = new RectangleAdapter(120, 200, 60, 40);
-    r->draw();
+    rectangulo *r = new AdaptadorRectangulo(120, 200, 60, 40);
+    r->dibujar();
 }
-#include "Adapter_Pattern.h"
