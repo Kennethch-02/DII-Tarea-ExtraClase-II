@@ -1,0 +1,14 @@
+//
+// Created by Admin on 26/3/2021.
+//
+
+#ifndef DII_TAREA_EXTRACLASE_II_ADAPTER_PATTERN_H
+#define DII_TAREA_EXTRACLASE_II_ADAPTER_PATTERN_H
+
+
+class Adapter_Pattern {
+
+};
+
+
+#endif //DII_TAREA_EXTRACLASE_II_ADAPTER_PATTERN_H

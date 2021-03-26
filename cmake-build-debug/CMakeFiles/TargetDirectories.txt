@@ -1,0 +1,3 @@
+C:/Users/Admin/Desktop/Kenneth OneDrive/OneDrive - Estudiantes ITCR/TEC/Semestre 1 2021/Datos II/DII-Tarea-ExtraClase-II/cmake-build-debug/CMakeFiles/DII_Tarea_ExtraClase_II.dir
+C:/Users/Admin/Desktop/Kenneth OneDrive/OneDrive - Estudiantes ITCR/TEC/Semestre 1 2021/Datos II/DII-Tarea-ExtraClase-II/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Admin/Desktop/Kenneth OneDrive/OneDrive - Estudiantes ITCR/TEC/Semestre 1 2021/Datos II/DII-Tarea-ExtraClase-II/cmake-build-debug/CMakeFiles/rebuild_cache.dir
